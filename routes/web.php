@@ -14,7 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::group(['prefix' => 'guardian', 'middleware' => 'auth'], function () {
+    Route::resource('parent', 'FrontendController');
+    Route::resource('/home', 'HomeController');
+    Route::post('code','FrontendController@code');
+});
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Auth::routes();
 
-Route::resource('/home', 'HomeController');
+

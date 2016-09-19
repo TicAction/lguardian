@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\FormHomework;
+use App\Homework;
 use App\Kid;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Psy\Test\CodeCleaner\CallTimePassByReferencePassTest;
 
 class HomeController extends Controller
 {
@@ -26,10 +30,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = User::all();
-        $user->load('kids');
-        $kids = Kid::where('code','bc13a')->get();
-        return view('home',compact('kids','user'));
+        $fHomeworks = FormHomework::orderBy('start','desc')->paginate(5);
+        $fHomework = FormHomework::all();
+        $guardians = User::where('id','=',Auth::guard()->user()->id)->get();
+
+        return view('home',compact('fHomeworks','guardians'));
     }
 
     public function create()
@@ -41,5 +46,6 @@ class HomeController extends Controller
 
         return redirect('home');
     }
+
 
 }
