@@ -18,6 +18,8 @@ Route::group(['prefix' => 'guardian', 'middleware' => 'auth'], function () {
     Route::resource('parent', 'FrontendController');
     Route::resource('/home', 'HomeController');
     Route::post('code','FrontendController@code');
+    Route::get('comportement/{id}','FrontendController@getBehavior');
+    Route::get('enfant/{id}','BehaviorController@show')->name('enfant');
 });
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Auth::routes();

@@ -1,14 +1,11 @@
-@extends('layouts.show')
-@section('content')
-    <div class="col-md-10 col-lg-offset-1">
+@extends('layouts.admin')
 
-
-        <h3 class="text-center">
-            Leçons de la semaine du
+        <h4 class="text-center">
+            Leçons du
             {{\Jenssegers\Date\Date::createFromFormat('Y-m-d H:i:s',$fHomework->start)->format('l d F Y')}}
             au
             {{\Jenssegers\Date\Date::createFromFormat('Y-m-d H:i:s',$fHomework->end)->format('l d F Y')}}
-        </h3>
+        </h4>
         <table class="table table-striped table-reponsive">
             @if($fHomework->lecture)
                 <tr class="text-left">
@@ -127,8 +124,5 @@
 
         </table>
 
-
-
-    </div>
 
 @endsection

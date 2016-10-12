@@ -30,7 +30,8 @@ class User extends Authenticatable
     ];
     public function kids()
     {
-        return $this->belongsToMany('App\Kid');
+        return $this->belongsToMany('App\Kid')->withPivot('kid_id','user_id');
     }
+
 
 }

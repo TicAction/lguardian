@@ -14,7 +14,7 @@
           integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
-    {!! Html::style('css/cerulan.css') !!}
+    {!! Html::style('css/slate.css') !!}
     {!! Html::style('css/main.css') !!}
     {!! Html::style('datepicker/css/bootstrap-datepicker.css') !!}
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
@@ -22,7 +22,7 @@
 
 </head>
 <body id="app-layout">
-<nav class="navbar navbar-inverse navbar-static-top">
+<nav class="navbar navbar-default navbar-static-top">
     <div class="container">
         <div class="navbar-header">
 
@@ -58,7 +58,7 @@
                 <div class="nav navbar-nav">
 
                             <li>
-                                <a href="{{ url('/devoir') }}"><i class="fa fa-paper-plane"></i> Courriel à l'enseignant(e)</a>
+                                {{--<a href="#" class="disabled"><i class="fa fa-paper-plane"></i> Courriel à l'enseignant(e)</a>--}}
                             </li>
 
                         <form class="navbar-form navbar-left" method="post" action="{{url('guardian/code')}}">

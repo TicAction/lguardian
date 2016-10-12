@@ -6,10 +6,10 @@
             <div class="col-md-3">
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Comportement</h3>
+                        <h3 class="panel-title">LE NOM DE L'ENFANT</h3>
                     </div>
                     <div class="panel-body">
-                        <h5>LE NOM DE L'ENFANT</h5>
+                       
                         <ul class="list-unstyled">
                             <li>Liste 1</li>
                             <li>Liste 2</li>
@@ -52,7 +52,7 @@
                         @foreach($fHomeworks as $fHomework)
                             <h3 class="text-center">
 
-                                Leçons de la semaine du
+                                Leçons du
                                 {{\Jenssegers\Date\Date::createFromFormat('Y-m-d H:i:s',$fHomework->start)->format('l d F Y')}}
                                 au
                                 {{\Jenssegers\Date\Date::createFromFormat('Y-m-d H:i:s',$fHomework->end)->format('l d F Y')}}

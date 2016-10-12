@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Behavior;
 use App\FormHomework;
 use App\Kid;
 use App\User;
@@ -28,6 +29,12 @@ class FrontendController extends Controller
         return redirect('guardian/home');
     }
 
+    public function getBehavior($id)
+    {
+        $behavior = Behavior::findOrFail($id);
+
+        return view('frontend.behavior',compact('behavior'));
+    }
 
     /**
      * Display a listing of the resource.
@@ -37,7 +44,7 @@ class FrontendController extends Controller
     public function index()
     {
         $fHomework = FormHomework::all();
-        $guardians = User::where('id', '=' , Auth::guard()->user()->id)->get();
+        $guardians= User::where('id', '=' , Auth::guard()->user()->id)->get();
 
         return view('frontend.index',compact('fHomework','guardians'));
     }

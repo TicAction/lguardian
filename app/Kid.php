@@ -8,6 +8,7 @@ class Kid extends Model
 {
 
     protected $fillable = ['firstname','lastname','birthday','code','role','admin_id'];
+
     public function users()
     {
         return $this->belongsToMany('App\User')->withPivot('kid_id','user_id');
@@ -17,4 +18,10 @@ class Kid extends Model
     {
         return $this->firstname ." " .$this->lastname;
     }
+
+    public function behaviors()
+    {
+        return $this->hasMany('App\Behavior');
+    }
+
 }

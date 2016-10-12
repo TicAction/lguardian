@@ -179,7 +179,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        App\Providers\KidServiceProvider::class,
+        GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
     ],

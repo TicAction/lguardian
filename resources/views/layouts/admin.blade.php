@@ -1,12 +1,16 @@
 @include('layouts.navbar')
 
-<div class="container-fluid">
+<div class="container">
 
     {{--include de la session de validation--}}
     @include("validators.validate")
+<div class="col-md-3">
+    @include('partials.sidebar')
+</div>
+    <div class="col-md-9">
 
-    <div class="col-md-12">
         @yield('content')
+
     </div>
 
 </div>
