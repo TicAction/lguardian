@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin.main')
 @section('content')
 
             <div class="panel panel-info">
@@ -17,12 +17,10 @@
 
                         </a>
                         <hr>
-
                     @endforeach
                     <div class="text-center">
                         {{$fHomeworks->links()}}
                     </div>
-
 
                 </div>
             </div>

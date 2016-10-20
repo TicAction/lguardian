@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin.main')
 
 @section('content')
     <div class="panel panel-info">

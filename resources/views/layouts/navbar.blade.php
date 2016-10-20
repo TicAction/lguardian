@@ -87,8 +87,8 @@
                                         Logout</a>
                                 </li>
 
-                                <li><a href="{{ url('/groupe/create') }}"><i class="fa fa-user"aria-hidden="true"></i> Mon profil</a>
-                                </li>
+                                {{--<li><a href="{{ url('/groupe/create') }}"><i class="fa fa-user"aria-hidden="true"></i> Mon profil</a>--}}
+                                {{--</li>--}}
                             </ul>
                         </li>
                     @endif

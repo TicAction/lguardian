@@ -1,5 +1,5 @@
-@extends('layouts.admin')
-
+@extends('layouts.admin.main')
+@section('content')
         <h4 class="text-center">
             Leçons du
             {{\Jenssegers\Date\Date::createFromFormat('Y-m-d H:i:s',$fHomework->start)->format('l d F Y')}}
