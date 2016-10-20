@@ -1,6 +1,6 @@
 @include('layouts.navbar')
 
-<div class="container">
+<div class="container-fluid">
 
     {{--include de la session de validation--}}
     @include("validators.validate")

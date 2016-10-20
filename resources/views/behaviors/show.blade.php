@@ -6,15 +6,23 @@
             <h3 class="panel-title">Liste des comportements</h3>
         </div>
         <div class="panel-body">
-                <p>
-                    <strong>{{ucfirst(\Jenssegers\Date\Date::createFromFormat('Y-m-d H:i:s',$behavior->behave_date)->format('l d F Y'))}}</strong>
-                </p>
-                   <hr>
-                <p>
-                    {{$behavior->behavior}}
 
-                </p>
-                <hr>
+
+            @foreach($behavior as $bev)
+                @if($bev->publish == 1)
+                    <p>
+                        <strong>{{ucfirst(\Jenssegers\Date\Date::createFromFormat('Y-m-d H:i:s',$bev->behave_date)->format('l d F Y'))}}</strong>
+                    </p>
+                    <hr>
+                    <p>
+                        {{$bev->behavior}}
+
+                    </p>
+
+                @endif
+            @endforeach
+
+            <hr>
 
         </div>
     </div>

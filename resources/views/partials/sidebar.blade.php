@@ -8,8 +8,8 @@
                 @foreach($guardians as $guardian)
                     @foreach($guardian->kids as $kid)
                         <li>
-                            <a href="{{route('enfant',$kid->id)}}">
-                                {{$kid->firstname}} {{$kid->lastname}}
+                            <a href="{{url('guardian/enfant',$kid->id)}}">
+                               {{$kid->firstname}} {{$kid->lastname}}
                             </a>
                         </li>
                     @endforeach

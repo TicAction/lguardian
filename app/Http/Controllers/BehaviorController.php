@@ -18,11 +18,12 @@ class BehaviorController extends Controller
     {
         //
     }
+
     public function show($id)
     {
-        $behavior = Behavior::findOrFail($id);
+        $behavior = Behavior::where('kid_id', '=', $id)->get();
 
-        return view('behaviors.show',compact('behavior'));
+        return view('behaviors.show', compact('behavior'));
     }
 
 
