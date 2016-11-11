@@ -3,7 +3,7 @@
 @section('content')
     <div class="text-center">
 
-        <a href="{{url("login")}}">
+        <a href="{{url("/login")}}">
         <button type="button" class="btn btn-danger btn-lg">
             Je veux me connecter
         </button>

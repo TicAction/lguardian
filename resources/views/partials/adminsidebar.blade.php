@@ -1,20 +1,20 @@
+<ul class="nav nav-sidebar">
 
-          <ul class="nav nav-sidebar">
-            <li><a href="{{url("admin/enfant")}}">Liste d'enfant</a></li>
-            <li><a href="{{url("admin/observation")}}">Observation</a></li>
-            <li><a href="{{url('admin/comportement')}}">Comportement</a></li>
-          </ul>
-          <hr>
-          <ul class="nav nav-sidebar">
-            <li><a href="{{url('admin/devoir')}}">Liste des devoirs</a></li>
-            <li><a href="{{url('admin/devoir/create')}}">Devoir sans formulaire</a></li>
-            <li><a href="{{url('admin/formulaire/create')}}">Devoir avec formulaire</a></li>
-          </ul>
-          <hr>
-          <ul class="nav nav-sidebar">
-            <li><a href="{{url('admin/liste/parent')}}">Liste des parents</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-          </ul>
+    @foreach($guardians as $guardian)
+        @foreach($guardian->kids as $kid)
+            <li>
+                <a href="{{url('guardian/enfant',$kid->id)}}">
+                    {{$kid->firstname}} {{$kid->lastname}}
+                </a>
+            </li>
+        @endforeach
+    @endforeach
+<li>
+    <a href="{{url('guardian/home')}}"> Page d'accueil</a>
+</li>
+
+</ul>
+
+
 
        

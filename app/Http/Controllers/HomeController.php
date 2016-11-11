@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Behavior;
+use App\File;
 use App\FormHomework;
 use App\Homework;
 use App\Kid;
@@ -30,11 +32,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $fHomeworks = FormHomework::orderBy('start','desc')->paginate(5);
-        $fHomework = FormHomework::all();
         $guardians = User::where('id','=',Auth::guard()->user()->id)->get();
+        $guardians->load('kids');
+        $files = File::all();
+        $fHomeworks = FormHomework::orderBy('start','desc')->paginate(4);
+        $behaviors = Behavior::all();
 
-        return view('home',compact('fHomeworks','guardians'));
+        return view('home',compact('fHomeworks','guardians','behaviors','files'));
     }
 
     public function create()
@@ -43,9 +47,16 @@ class HomeController extends Controller
     }
     public function store(Request $request)
     {
-
         return redirect('home');
     }
+
+    public function behavior()
+    {
+        $behaviors = Behavior::all();
+
+            return view('home',compact('behaviors'));
+    }
+
 
 
 }

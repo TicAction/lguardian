@@ -21,15 +21,15 @@
 
     <!-- Custom styles for this template -->
     <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
-    <script src='lib/jquery.min.js'></script>
-    <script src='lib/moment.min.js'></script>
-    <script src='fullcalendar/fullcalendar.js'></script>
+    {{--<script src='lib/jquery.min.js'></script>--}}
+    {{--<script src='lib/moment.min.js'></script>--}}
+    {{--<script src='fullcalendar/fullcalendar.js'></script>--}}
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="//cdn.ckeditor.com/4.5.10/full/ckeditor.js"></script>
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     {!! Html::script ("js/ie-emulation-modes-warning.js")!!}
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>

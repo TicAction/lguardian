@@ -179,7 +179,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\KidServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,

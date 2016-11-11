@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     {!! Html::style('css/slate.css') !!}
-    {!! Html::style('css/main.css') !!}
+    {{--{!! Html::style('css/main.css') !!}--}}
     {!! Html::style('datepicker/css/bootstrap-datepicker.css') !!}
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 

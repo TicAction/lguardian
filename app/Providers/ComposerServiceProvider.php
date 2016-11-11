@@ -2,12 +2,10 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use App\User;
 
-class KidServiceProvider extends ServiceProvider
+class ComposerServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -16,9 +14,13 @@ class KidServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-       view()->composer('partials.sidebar', function($view){
-          $view->with( 'guardians', User::where('id', '=' , Auth::guard()->user()->id)->get());
-       });
+
+        View::composer(
+            'partials.adminsidebar','App\Http\ViewComposers\KidComposer'
+        );
+        View::composer(
+            'partials.adminsidebar','App\Http\ViewComposers\FileComposer'
+        );
     }
 
     /**
