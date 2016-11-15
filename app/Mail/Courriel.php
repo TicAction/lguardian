@@ -1,15 +1,18 @@
 <?php
 
 namespace App\Mail;
-
+use App\Kid;
+use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Auth;
 
 class Courriel extends Mailable
 {
     use Queueable, SerializesModels;
+
 
     /**
      * Create a new message instance.
@@ -18,7 +21,9 @@ class Courriel extends Mailable
      */
     public function __construct()
     {
-        //
+
+
+
     }
 
     /**
@@ -28,6 +33,20 @@ class Courriel extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+
+        $user = User::where('id',Auth::guard()->user()->id)->first();
+        $user->load('kids');
+
+        foreach ($user->kids as $kid):
+
+             $student = $kid->fullname;
+            endforeach;
+
+        return $this->view('mails.welcome')
+                    ->with([
+                        'user'=>$user->name, 'student'=>$student,
+                    ]
+
+                    );
     }
 }

@@ -10,6 +10,8 @@
                 <div class="panel-body">
                     @foreach($fHomeworks as $fHomework)
 
+                        @if($fHomework->start <= \Carbon\Carbon::now())
+
                         <a href="{{url('guardian/parent', $fHomework->id)}}">
                             Leçons du
                             {{\Jenssegers\Date\Date::createFromFormat('Y-m-d H:i:s',$fHomework->start)->format('l d F Y')}}
@@ -18,6 +20,7 @@
 
                         </a>
                         <hr>
+                        @endif
                     @endforeach
                     <div class="text-center">
                         {{$fHomeworks->links()}}

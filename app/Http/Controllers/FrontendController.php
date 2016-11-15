@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Behavior;
 use App\FormHomework;
 use App\Kid;
+use App\Mail\Courriel;
 use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class FrontendController extends Controller
 {
@@ -21,11 +23,15 @@ class FrontendController extends Controller
         $user = new User();
         $user->load('kids');
         $code = $request->get('code');
+
         $kids = Kid::where('code','=',$code)->get();
-           foreach($kids as $kid)
+
+        foreach($kids as $kid)
            {
+
                $user->kids()->attach($kid->id,['user_id'=>$guardian]);
            }
+        Mail::to('ghislain.girard@cssh.qc.ca')->send(new Courriel());
         return redirect('guardian/home');
     }
 
