@@ -42,7 +42,7 @@ class Courriel extends Mailable
              $student = $kid->fullname;
             endforeach;
 
-        return $this->view('mails.welcome')
+        return $this->view('courriels.welcome')
                     ->with([
                         'user'=>$user->name, 'student'=>$student,
                     ]

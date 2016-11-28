@@ -22,7 +22,7 @@
                     <a href="#">Mon profil</a>
                 </li>
                 <li>
-                    <a href="#" class="disabled"><i class="fa fa-paper-plane"></i> Courriel à l'enseignant(e)</a>
+                    <a href="{{url('guardian/courriel/create')}}" class="disabled"><i class="fa fa-paper-plane"></i> Courriel à l'enseignant(e)</a>
                 </li>
                 <li>
                     <form class="navbar-form navbar-left" method="post" action="{{url('guardian/code')}}">

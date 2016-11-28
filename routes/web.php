@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 Route::group(['prefix' => 'guardian', 'middleware' => 'auth'], function () {
     Route::resource('parent', 'FrontendController');
+    Route::resource('courriel', 'CourrielController');
     Route::resource('/home', 'HomeController');
     Route::post('code','FrontendController@code');
     Route::get('comportement/{id}','FrontendController@getBehavior');
